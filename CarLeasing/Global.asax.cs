@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using CarLeasing.Models;
+using System.Data.Entity;
 
 namespace CarLeasing
 {
@@ -12,6 +14,7 @@ namespace CarLeasing
     {
         protected void Application_Start()
         {
+            Database.SetInitializer(new DemoInitializer());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

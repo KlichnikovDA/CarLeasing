@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "OrderCar";
+}
+
+<h2>Поступила заявка на аренду машины</h2>
+<div>
+    <p>Заявка от: @ViewBag.Customer.Name</p>
+    <p>Рейтинг клиента: @ViewBag.Scoring.TotalScore</p>
+    <br />
+    <p>Доступные по рейтингу автомобили:</p>
+    @foreach (var c in ViewBag.Cars)
+    {
+    <p>Модель: @c.Model, доступно на срок @c.Period дней, цена @c.Cost/день    <input type="submit" value="Утвердить" /></p>
+    }
+    <input type="submit" value="Отказать" />
+    </div>
+
