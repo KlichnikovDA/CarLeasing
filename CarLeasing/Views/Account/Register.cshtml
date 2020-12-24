@@ -12,6 +12,85 @@
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
+        @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ParentalName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.ParentalName, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.BirthDate, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.BirthDate, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.LicenseDate, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.LicenseDate, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Married, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            Состою в браке
+            @Html.RadioButtonFor(m => m.Married, true)
+            <br />Не состою в браке
+            @Html.RadioButtonFor(m => m.Married, false)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.HasChildren, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            Имею детей
+            @Html.RadioButtonFor(m => m.HasChildren, true)
+            <br />Не имею детей
+            @Html.RadioButtonFor(m => m.HasChildren, false)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Employment, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            Имею официальное трудоустройство
+            @Html.RadioButtonFor(m => m.Employment, true)
+            <br />Не имею официального трудоустройства
+            @Html.RadioButtonFor(m => m.Employment, false)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.EmploymentDate, new { @class = "col-md-2 control-label" })
+        <br />Не заполняйте, если не имеете официального трудоустройства<br />
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.EmploymentDate, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.IncomeCategory, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            До 24 тысяч рублей/месяц
+            @Html.RadioButtonFor(m => m.IncomeCategory, 0)
+            <br />24-48 тысяч рублей/месяц
+            @Html.RadioButtonFor(m => m.IncomeCategory, 1)
+            <br />Больше 48 тысяч рублей/месяц
+            @Html.RadioButtonFor(m => m.IncomeCategory, 2)
+        </div>
+    </div>
+
+    <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })

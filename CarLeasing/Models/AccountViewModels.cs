@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System;
 
 namespace CarLeasing.Models
 {
@@ -79,6 +80,57 @@ namespace CarLeasing.Models
         [Display(Name = "Подтверждение пароля")]
         [Compare("Password", ErrorMessage = "Пароль и его подтверждение не совпадают.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Фамилия")]
+        public string LastName { get; set; }
+
+        [Required]
+        [Display(Name = "Имя")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Отчество")]
+        public string ParentalName { get; set; }
+
+        [Required]
+        [Display(Name = "Дата рождения")]
+        public DateTime BirthDate { get; set; }
+
+        [Required]
+        [Display(Name = "Дата получения водительского удостоверения")]
+        public DateTime LicenseDate { get; set; }
+
+        [Required]
+        [Display(Name = "Семейное положение")]
+        public bool Married { get; set; }
+
+        [Required]
+        [Display(Name = "Наличие детей")]
+        public bool HasChildren { get; set; }
+        // Кредитная история
+        public enum CreditHistory
+        {
+            Negative = 0,
+            None = 1,
+            Positive = 2,
+        }
+        public CreditHistory CHistory { get; set; }
+
+        [Required]
+        [Display(Name = "Есть официальное трудоустройство")]
+        public bool Employment { get; set; }
+        
+        [Display(Name = "Дата официального трудоустройства")]
+        public DateTime EmploymentDate { get; set; }
+
+        [Required]
+        [Display(Name = "Уровень дохода")]
+        // Категория пользователя по доходам
+        public int IncomeCategory { get; set; }
+
+        // Паспортные данные подтверждены
+        public bool Verified { get; set; }
     }
 
     public class ResetPasswordViewModel
