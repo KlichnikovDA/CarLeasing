@@ -3,6 +3,14 @@
     ViewBag.Title = "OrderCar";
 }
 
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $("#accordion").accordion();
+    });
+</script>
+
 <h2>Поступила заявка на аренду машины</h2>
 <div>
     <p>Заявка от: @ViewBag.Customer.Name</p>
@@ -11,8 +19,8 @@
     <p>Доступные по рейтингу автомобили:</p>
     @foreach (var c in ViewBag.Cars)
     {
-    <p>Модель: @c.Model, доступно на срок @c.Period дней, цена @c.Cost/день    <input type="submit" value="Утвердить" /></p>
+        <p>Модель: @c.Model, доступно на срок @c.Period дней, цена @c.Cost/день    <input type="submit" value="Утвердить" /></p>
     }
     <input type="submit" value="Отказать" />
-    </div>
+</div>
 
