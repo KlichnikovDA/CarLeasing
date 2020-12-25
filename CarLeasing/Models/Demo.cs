@@ -27,6 +27,7 @@ namespace CarLeasing.Models
                 HasChildren = false,
                 CHistory = Customer.CreditHistory.Positive,
                 Employment = false,
+                EmploymentDate = DateTime.Today,
                 IncomeCategory = 1,
                 Verified = false
             });
