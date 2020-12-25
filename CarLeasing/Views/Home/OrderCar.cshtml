@@ -8,11 +8,25 @@
     <p>Заявка от: @ViewBag.Customer.Name</p>
     <p>Рейтинг клиента: @ViewBag.Scoring.TotalScore</p>
     <br />
-    <p>Доступные по рейтингу автомобили:</p>
-    @foreach (var c in ViewBag.Cars)
+    @foreach (var s in ViewBag.scoring.ScoreCategories)
     {
-    <p>Модель: @c.Model, доступно на срок @c.Period дней, цена @c.Cost/день    <input type="submit" value="Утвердить" /></p>
+        <p>@s.Key: @s.Value</p>
     }
-    <input type="submit" value="Отказать" />
-    </div>
+    @if (ViewBag.Scoring.TotalScore < 500)
+    {
+        <p>Рекомендуется отказать</p>
+    }
+    else
+    {
+        if (ViewBag.Scoring.TotalScore < 800)
+        {
+            <p>Рекомендуется утвердить</p>
+        }
+        else
+        {
+            <p></p>
+        }
+    }
+    <input type="submit" value="Утвердить" /> <input type="submit" value="Отказать" />
+</div>
 
